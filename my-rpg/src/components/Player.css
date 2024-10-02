@@ -1,0 +1,7 @@
+.player-card {
+	height: fit-content;
+	width: fit-content;
+	margin: 1rem auto;
+	padding: 1rem 2rem;
+	border: 2px solid red;
+}
