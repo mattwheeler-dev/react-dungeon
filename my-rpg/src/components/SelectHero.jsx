@@ -4,21 +4,25 @@ import HeroFactory from "./HeroFactory";
 import "./SelectHero.css";
 
 const SelectHero = () => {
-	const { setPlayerStats } = useContext(AppContext);
+	const { playerStats, setPlayerStats, setGameStatus } = useContext(AppContext);
 	const knight = HeroFactory("Knight");
 	const rogue = HeroFactory("Rogue");
 	const mage = HeroFactory("Mage");
 
 	const handleSelect = (e) => {
 		const cards = document.querySelectorAll(".hero-card");
-		if (e.target == cards[0]) {
+		if (e.target == cards[0] || e.target.parentElement == cards[0]) {
 			setPlayerStats(knight);
-		} else if (e.target == cards[1]) {
+		} else if (e.target == cards[1] || e.target.parentElement == cards[1]) {
 			setPlayerStats(rogue);
-		} else if (e.target == cards[2]) {
+		} else if (e.target == cards[2] || e.target.parentElement == cards[2]) {
 			setPlayerStats(mage);
 		}
 		return;
+	};
+
+	const startGame = () => {
+		setGameStatus(true);
 	};
 
 	return (
@@ -44,6 +48,18 @@ const SelectHero = () => {
 				<h4>Armor: {mage.armor}</h4>
 				<h4>Attack: {mage.attack}</h4>
 			</article>
+
+			<button
+				className="start-btn"
+				onClick={startGame}
+				disabled={
+					playerStats.title != "Knight" &&
+					playerStats.title != "Rogue" &&
+					playerStats.title != "Mage"
+				}
+			>
+				Start Game!
+			</button>
 		</section>
 	);
 };
