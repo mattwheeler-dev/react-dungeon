@@ -16,6 +16,7 @@
 }
 
 .hero-card {
+	cursor: pointer;
 	padding: 1rem 2rem;
 	text-align: center;
 	border: 2px solid lime;

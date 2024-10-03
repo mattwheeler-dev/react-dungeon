@@ -1,9 +1,9 @@
-import { useState } from "react";
-import HeroFactory from "./HeroFactory";
+import { useContext } from "react";
+import { AppContext } from "../App";
 import "./Player.css";
 
 const Player = () => {
-	const [playerStats, setPlayerStats] = useState(HeroFactory(""));
+	const { playerStats } = useContext(AppContext);
 
 	return (
 		<div className="player-card">
