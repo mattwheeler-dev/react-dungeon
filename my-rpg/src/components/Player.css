@@ -1,7 +1,14 @@
 .player-card {
+	min-height: 15rem;
 	height: fit-content;
 	width: fit-content;
 	margin: 1rem auto;
 	padding: 1rem 2rem;
+	text-align: center;
 	border: 2px solid orange;
+}
+
+.player-card img {
+	max-height: 20rem;
+	width: 100%;
 }

@@ -11,7 +11,8 @@ const HeroFactory = (title) => {
 				armor: 2,
 				attack: 5,
 				skills: ["Attack", "Shield Bash"],
-				image: { knightImg },
+				image: knightImg,
+				altText: "Corgi in a suit of armor holding a sword and shield",
 			};
 		case "Rogue":
 			return {
@@ -20,7 +21,8 @@ const HeroFactory = (title) => {
 				armor: 1,
 				attack: 7,
 				skills: ["Attack", "Smoke Bomb"],
-				image: { rogueImg },
+				image: rogueImg,
+				altText: "Cat wearing leather armor holding a dagger",
 			};
 		case "Mage":
 			return {
@@ -29,7 +31,8 @@ const HeroFactory = (title) => {
 				armor: 0,
 				attack: 9,
 				skills: ["Attack", "Ice Shard"],
-				image: { mageImg },
+				image: mageImg,
+				altText: "White fox wearing mage robes with a magic orb",
 			};
 		default:
 			return {
