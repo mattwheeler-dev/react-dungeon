@@ -5,14 +5,14 @@ const MonsterFactory = (monster) => {
 				title: monster,
 				health: 15,
 				armor: 1,
-				attack: 5,
+				attack: 3,
 			};
 		case "Skeleton":
 			return {
 				title: monster,
 				health: 12,
 				armor: 0,
-				attack: 3,
+				attack: 5,
 			};
 		case "Witch":
 			return {
