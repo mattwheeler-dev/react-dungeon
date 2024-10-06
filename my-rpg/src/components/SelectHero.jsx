@@ -29,24 +29,27 @@ const SelectHero = () => {
 		<section className="select-hero-container">
 			<h2>Select Your Hero</h2>
 			<article className="hero-card" onClick={handleSelect}>
-				<h3>Class: {knight.title}</h3>
-				<h4>Health: {knight.health}</h4>
-				<h4>Armor: {knight.armor}</h4>
-				<h4>Attack: {knight.attack}</h4>
+				<p className="class-title">Class: {knight.title}</p>
+				<p>Health: {knight.health}</p>
+				<p>Armor: {knight.armor}</p>
+				<p>Attack: {knight.attack}</p>
+				<p>Skills: {`${knight.skills[0]}, ${knight.skills[1]}`}</p>
 			</article>
 
 			<article className="hero-card" onClick={handleSelect}>
-				<h3>Class: {rogue.title}</h3>
-				<h4>Health: {rogue.health}</h4>
-				<h4>Armor: {rogue.armor}</h4>
-				<h4>Attack: {rogue.attack}</h4>
+				<p className="class-title">Class: {rogue.title}</p>
+				<p>Health: {rogue.health}</p>
+				<p>Armor: {rogue.armor}</p>
+				<p>Attack: {rogue.attack}</p>{" "}
+				<p>Skills: {`${rogue.skills[0]}, ${rogue.skills[1]}`}</p>
 			</article>
 
 			<article className="hero-card" onClick={handleSelect}>
-				<h3>Class: {mage.title}</h3>
-				<h4>Health: {mage.health}</h4>
-				<h4>Armor: {mage.armor}</h4>
-				<h4>Attack: {mage.attack}</h4>
+				<p className="class-title">Class: {mage.title}</p>
+				<p>Health: {mage.health}</p>
+				<p>Armor: {mage.armor}</p>
+				<p>Attack: {mage.attack}</p>{" "}
+				<p>Skills: {`${mage.skills[0]}, ${mage.skills[1]}`}</p>
 			</article>
 
 			<button

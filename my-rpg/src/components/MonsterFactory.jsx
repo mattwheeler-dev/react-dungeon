@@ -11,6 +11,7 @@ const MonsterFactory = (monster) => {
 				armor: 1,
 				attack: 3,
 				image: slimeImg,
+				altText: "Blue and orange slime monster",
 			};
 		case "Skeleton":
 			return {
@@ -19,6 +20,7 @@ const MonsterFactory = (monster) => {
 				armor: 0,
 				attack: 5,
 				image: skeleImg,
+				altText: "Skeleton holding a  sword",
 			};
 		case "Shroomer":
 			return {
@@ -27,6 +29,7 @@ const MonsterFactory = (monster) => {
 				armor: 0,
 				attack: 7,
 				image: shroomImg,
+				altText: "Orange mushroom monster",
 			};
 	}
 };

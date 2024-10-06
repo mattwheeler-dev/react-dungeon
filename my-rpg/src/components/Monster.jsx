@@ -12,12 +12,11 @@ const Monster = () => {
 
 	return (
 		<div className="monster-card">
-			<h2>Current Monster:</h2>
-			<h2>{monsterStats.title}</h2>
+			<p>{monsterStats.title}</p>
 			<img src={monsterStats.image} />
-			<h3>Health: {monsterStats.health}</h3>
-			<h3>Armor: {monsterStats.armor}</h3>
-			<h3>Attack: {monsterStats.attack}</h3>
+			<p>Health: {monsterStats.health}</p>
+			<p>Armor: {monsterStats.armor}</p>
+			<p>Attack: {monsterStats.attack}</p>
 		</div>
 	);
 };

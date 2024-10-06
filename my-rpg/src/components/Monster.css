@@ -1,7 +1,16 @@
 .monster-card {
 	height: fit-content;
-	width: fit-content;
+	width: 25%;
 	margin: 1rem auto;
-	padding: 1rem 2rem;
-	border: 2px solid red;
+	padding: 2rem 0;
+	text-align: center;
+	background-color: #101010;
+	border-radius: 1rem;
+	box-shadow: 0 0 0.5rem 0 #ff0202;
+}
+
+.monster-card img {
+	max-height: 18rem;
+	max-width: 100%;
+	margin: 1rem 0;
 }
