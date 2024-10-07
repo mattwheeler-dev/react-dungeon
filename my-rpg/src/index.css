@@ -18,3 +18,10 @@ body {
 h1 {
 	text-align: center;
 }
+
+/* scoreboard */
+.scoreboard {
+	position: fixed;
+	top: 2rem;
+	right: 1rem;
+}

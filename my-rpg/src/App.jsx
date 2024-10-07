@@ -1,8 +1,8 @@
 import { useState, createContext } from "react";
 import HeroFactory from "./components/HeroFactory";
 import SelectHero from "./components/SelectHero";
-import Player from "./components/Player";
 import Battlefield from "./components/Battlefield";
+import Scoreboard from "./components/Scoreboard";
 
 export const AppContext = createContext("");
 
@@ -24,6 +24,7 @@ const App = () => {
 					setScore,
 				}}
 			>
+				<Scoreboard />
 				{!gameStatus && <SelectHero />}
 				{gameStatus && <Battlefield />}
 			</AppContext.Provider>

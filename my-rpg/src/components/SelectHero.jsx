@@ -12,10 +12,19 @@ const SelectHero = () => {
 	const handleSelect = (e) => {
 		const cards = document.querySelectorAll(".hero-card");
 		if (e.target == cards[0] || e.target.parentElement == cards[0]) {
+			cards[0].classList.add("chosen");
+			cards[1].classList.remove("chosen");
+			cards[2].classList.remove("chosen");
 			setPlayerStats(knight);
 		} else if (e.target == cards[1] || e.target.parentElement == cards[1]) {
+			cards[0].classList.remove("chosen");
+			cards[1].classList.add("chosen");
+			cards[2].classList.remove("chosen");
 			setPlayerStats(rogue);
 		} else if (e.target == cards[2] || e.target.parentElement == cards[2]) {
+			cards[0].classList.remove("chosen");
+			cards[1].classList.remove("chosen");
+			cards[2].classList.add("chosen");
 			setPlayerStats(mage);
 		}
 		return;
@@ -29,7 +38,8 @@ const SelectHero = () => {
 		<section className="select-hero-container">
 			<h2>Select Your Hero</h2>
 			<article className="hero-card" onClick={handleSelect}>
-				<p className="class-title">Class: {knight.title}</p>
+				<img src={knight.image} alt={knight.altText} />
+				<p className="class-title"> {knight.title}</p>
 				<p>Health: {knight.health}</p>
 				<p>Armor: {knight.armor}</p>
 				<p>Attack: {knight.attack}</p>
@@ -37,7 +47,8 @@ const SelectHero = () => {
 			</article>
 
 			<article className="hero-card" onClick={handleSelect}>
-				<p className="class-title">Class: {rogue.title}</p>
+				<img src={rogue.image} alt={rogue.altText} />
+				<p className="class-title"> {rogue.title}</p>
 				<p>Health: {rogue.health}</p>
 				<p>Armor: {rogue.armor}</p>
 				<p>Attack: {rogue.attack}</p>{" "}
@@ -45,7 +56,8 @@ const SelectHero = () => {
 			</article>
 
 			<article className="hero-card" onClick={handleSelect}>
-				<p className="class-title">Class: {mage.title}</p>
+				<img src={mage.image} alt={mage.altText} />
+				<p className="class-title"> {mage.title}</p>
 				<p>Health: {mage.health}</p>
 				<p>Armor: {mage.armor}</p>
 				<p>Attack: {mage.attack}</p>{" "}
