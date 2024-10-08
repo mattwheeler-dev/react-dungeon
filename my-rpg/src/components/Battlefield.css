@@ -1,5 +1,19 @@
 .battlefield {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-around;
+}
+
+.skill-btns {
+	width: 50%;
+	margin: 2rem auto;
+	border: 1px solid lime;
+}
+
+.skill-btns button {
+	cursor: pointer;
+	height: 7rem;
+	width: 7rem;
+	border-radius: 50%;
 }

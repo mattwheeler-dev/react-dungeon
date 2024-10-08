@@ -1,14 +1,17 @@
 import { useState, createContext } from "react";
 import HeroFactory from "./components/HeroFactory";
+import MonsterFactory from "./components/MonsterFactory";
+import Scoreboard from "./components/Scoreboard";
 import SelectHero from "./components/SelectHero";
 import Battlefield from "./components/Battlefield";
-import Scoreboard from "./components/Scoreboard";
 
 export const AppContext = createContext("");
 
 const App = () => {
 	const [playerStats, setPlayerStats] = useState(HeroFactory(""));
+	const [monsterStats, setMonsterStats] = useState(MonsterFactory(""));
 	const [gameStatus, setGameStatus] = useState(false);
+	const [playerTurn, setPlayerTurn] = useState(true);
 	const [score, setScore] = useState(0);
 
 	return (
@@ -18,8 +21,12 @@ const App = () => {
 				value={{
 					playerStats,
 					setPlayerStats,
+					monsterStats,
+					setMonsterStats,
 					gameStatus,
 					setGameStatus,
+					playerTurn,
+					setPlayerTurn,
 					score,
 					setScore,
 				}}
