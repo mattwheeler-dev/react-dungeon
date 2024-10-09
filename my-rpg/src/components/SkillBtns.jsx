@@ -11,9 +11,11 @@ const SkillBtns = () => {
 	} = useContext(AppContext);
 
 	const handleSkill = (e) => {
-		console.log(e.target.textContent);
 		if (e.target.textContent == "Attack") {
-			setMonsterStats(...monsterStats, (health -= playerStats.attack));
+			setMonsterStats({
+				...monsterStats,
+				health: monsterStats.health - (playerStats.attack - monsterStats.armor),
+			});
 		}
 		// setPlayerTurn(!playerTurn);
 	};

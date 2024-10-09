@@ -7,9 +7,14 @@ import Battlefield from "./components/Battlefield";
 
 export const AppContext = createContext("");
 
+const monsters = ["Slime", "Skeleton", "Shroomer"];
+const randomMonster = monsters[Math.floor(Math.random() * 3)];
+
 const App = () => {
 	const [playerStats, setPlayerStats] = useState(HeroFactory(""));
-	const [monsterStats, setMonsterStats] = useState(MonsterFactory(""));
+	const [monsterStats, setMonsterStats] = useState(
+		MonsterFactory(randomMonster)
+	);
 	const [gameStatus, setGameStatus] = useState(false);
 	const [playerTurn, setPlayerTurn] = useState(true);
 	const [score, setScore] = useState(0);

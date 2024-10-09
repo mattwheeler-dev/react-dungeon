@@ -1,14 +1,9 @@
-import { useState } from "react";
-import MonsterFactory from "./MonsterFactory";
+import { useContext } from "react";
+import { AppContext } from "../App";
 import "./Monster.css";
 
-const monsters = ["Slime", "Skeleton", "Shroomer"];
-const randomMonster = monsters[Math.floor(Math.random() * 3)];
-
 const Monster = () => {
-	const [monsterStats, setMonsterStats] = useState(
-		MonsterFactory(randomMonster)
-	);
+	const { monsterStats } = useContext(AppContext);
 
 	return (
 		<div className="monster-card">
