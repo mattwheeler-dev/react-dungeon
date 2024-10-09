@@ -7,11 +7,10 @@ const Player = () => {
 
 	return (
 		<div className="player-card">
-			<h2>Player</h2>
+			<h2>{playerStats.title}</h2>
 			{playerStats.image && (
 				<img src={playerStats.image} alt={playerStats.altText} />
 			)}
-			<p>{playerStats.title}</p>
 			<p>Health: {playerStats.health}</p>
 			<p>Armor: {playerStats.armor}</p>
 			<p>Attack: {playerStats.attack}</p>

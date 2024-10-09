@@ -8,12 +8,26 @@
 .skill-btns {
 	width: 50%;
 	margin: 2rem auto;
-	border: 1px solid lime;
+	text-align: center;
 }
 
 .skill-btns button {
 	cursor: pointer;
 	height: 7rem;
 	width: 7rem;
+	font-size: 1.2rem;
+	color: #fff;
+	background-color: #101010;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 	border-radius: 50%;
+}
+
+.attack-btn {
+	background-image: url("../assets/sword.png");
+}
+
+.skill-btn {
+	background-image: url("../assets/shield.png");
 }
