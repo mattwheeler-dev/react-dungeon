@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100..900&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
+	font-family: "Exo 2", Arial, Helvetica, sans-serif;
 }
 
 body {

@@ -17,6 +17,7 @@ const App = () => {
 	);
 	const [gameStatus, setGameStatus] = useState(false);
 	const [playerTurn, setPlayerTurn] = useState(true);
+	const [stunned, setStunned] = useState(false);
 	const [score, setScore] = useState(0);
 
 	return (
@@ -32,6 +33,8 @@ const App = () => {
 					setGameStatus,
 					playerTurn,
 					setPlayerTurn,
+					stunned,
+					setStunned,
 					score,
 					setScore,
 				}}

@@ -11,10 +11,12 @@ const SkillBtns = () => {
 		setMonsterStats,
 		playerTurn,
 		setPlayerTurn,
+		stunned,
+		setStunned,
 	} = useContext(AppContext);
 
 	const monsterTurn = () => {
-		if (monsterStats.stunned) {
+		if (stunned) {
 			setPlayerTurn(true);
 		} else {
 			setPlayerStats({
@@ -33,6 +35,7 @@ const SkillBtns = () => {
 					health:
 						monsterStats.health - (playerStats.attack - monsterStats.armor),
 				});
+				setStunned(false);
 				if (cooldown > 0) {
 					cooldown -= 1;
 				}
@@ -41,8 +44,8 @@ const SkillBtns = () => {
 				setMonsterStats({
 					...monsterStats,
 					health: monsterStats.health - (3 - monsterStats.armor),
-					stunned: true,
 				});
+				setStunned(true);
 				cooldown = 2;
 				break;
 			case "Smoke Bomb":
@@ -63,7 +66,9 @@ const SkillBtns = () => {
 				break;
 		}
 		setPlayerTurn(!playerTurn);
-		monsterTurn();
+		setTimeout(() => {
+			monsterTurn();
+		}, 1500);
 	};
 
 	return (
@@ -76,7 +81,7 @@ const SkillBtns = () => {
 				{playerStats.skills[0]}
 			</button>
 			<button
-				className="skill-btn"
+				className={`skill-btn ${playerStats.title.toLowerCase()}`}
 				disabled={cooldown > 0}
 				onClick={handleSkill}
 			>

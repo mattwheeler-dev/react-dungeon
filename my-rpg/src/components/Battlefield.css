@@ -28,6 +28,14 @@
 	background-image: url("../assets/sword.png");
 }
 
-.skill-btn {
+.skill-btn.knight {
 	background-image: url("../assets/shield.png");
+}
+
+.skill-btn.rogue {
+	background-image: url("../assets/smoke-bomb.png");
+}
+
+.skill-btn.mage {
+	background-image: url("../assets/ice-shard.png");
 }

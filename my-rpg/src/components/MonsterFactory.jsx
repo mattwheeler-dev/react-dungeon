@@ -10,7 +10,6 @@ const MonsterFactory = (monster) => {
 				health: 15,
 				armor: 1,
 				attack: 3,
-				stunned: false,
 				image: slimeImg,
 				altText: "Blue and orange slime monster",
 			};
@@ -20,7 +19,6 @@ const MonsterFactory = (monster) => {
 				health: 12,
 				armor: 0,
 				attack: 5,
-				stunned: false,
 				image: skeleImg,
 				altText: "Skeleton holding a  sword",
 			};
@@ -30,7 +28,6 @@ const MonsterFactory = (monster) => {
 				health: 10,
 				armor: 0,
 				attack: 7,
-				stunned: false,
 				image: shroomImg,
 				altText: "Orange mushroom monster",
 			};
