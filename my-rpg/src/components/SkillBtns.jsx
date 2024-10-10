@@ -33,6 +33,9 @@ const SkillBtns = () => {
 					health:
 						monsterStats.health - (playerStats.attack - monsterStats.armor),
 				});
+				if (cooldown > 0) {
+					cooldown -= 1;
+				}
 				break;
 			case "Shield Bash":
 				setMonsterStats({
@@ -40,6 +43,7 @@ const SkillBtns = () => {
 					health: monsterStats.health - (3 - monsterStats.armor),
 					stunned: true,
 				});
+				cooldown = 2;
 				break;
 			case "Smoke Bomb":
 				setMonsterStats({
@@ -47,6 +51,7 @@ const SkillBtns = () => {
 					health: monsterStats.health - (3 - monsterStats.armor),
 					stunned: true,
 				});
+				cooldown = 2;
 				break;
 			case "Ice Shard":
 				setMonsterStats({
@@ -54,6 +59,7 @@ const SkillBtns = () => {
 					health: monsterStats.health - (3 - monsterStats.armor),
 					stunned: true,
 				});
+				cooldown = 2;
 				break;
 		}
 		setPlayerTurn(!playerTurn);
