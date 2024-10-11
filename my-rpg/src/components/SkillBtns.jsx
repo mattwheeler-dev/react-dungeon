@@ -6,26 +6,12 @@ let cooldown = 0;
 const SkillBtns = () => {
 	const {
 		playerStats,
-		setPlayerStats,
 		monsterStats,
 		setMonsterStats,
 		playerTurn,
 		setPlayerTurn,
-		stunned,
 		setStunned,
 	} = useContext(AppContext);
-
-	const monsterTurn = () => {
-		if (stunned) {
-			setPlayerTurn(true);
-		} else {
-			setPlayerStats({
-				...playerStats,
-				health: playerStats.health - (monsterStats.attack - playerStats.armor),
-			});
-			setPlayerTurn(true);
-		}
-	};
 
 	const handleSkill = (e) => {
 		switch (e.target.textContent) {
@@ -52,23 +38,20 @@ const SkillBtns = () => {
 				setMonsterStats({
 					...monsterStats,
 					health: monsterStats.health - (3 - monsterStats.armor),
-					stunned: true,
 				});
+				setStunned(true);
 				cooldown = 2;
 				break;
 			case "Ice Shard":
 				setMonsterStats({
 					...monsterStats,
 					health: monsterStats.health - (3 - monsterStats.armor),
-					stunned: true,
 				});
+				setStunned(true);
 				cooldown = 2;
 				break;
 		}
 		setPlayerTurn(!playerTurn);
-		setTimeout(() => {
-			monsterTurn();
-		}, 1500);
 	};
 
 	return (

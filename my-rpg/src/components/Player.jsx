@@ -14,9 +14,6 @@ const Player = () => {
 			<p>Health: {playerStats.health}</p>
 			<p>Armor: {playerStats.armor}</p>
 			<p>Attack: {playerStats.attack}</p>
-			{playerStats.skills && (
-				<p>Skills: {`${playerStats.skills[0]}, ${playerStats.skills[1]}`}</p>
-			)}
 		</div>
 	);
 };
