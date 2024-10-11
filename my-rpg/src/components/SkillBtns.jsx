@@ -58,6 +58,7 @@ const SkillBtns = () => {
 		<div className="skill-btns">
 			<button
 				className="attack-btn"
+				title={`Basic Attack, deals ${playerStats.attack} damage`}
 				disabled={!playerTurn}
 				onClick={handleSkill}
 			>
@@ -65,6 +66,7 @@ const SkillBtns = () => {
 			</button>
 			<button
 				className={`skill-btn ${playerStats.title.toLowerCase()}`}
+				title={`Deals 3 damage and stuns the monster for 1 turn`}
 				disabled={cooldown > 0}
 				onClick={handleSkill}
 			>

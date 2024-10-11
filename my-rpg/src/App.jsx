@@ -28,8 +28,15 @@ const App = () => {
 				return;
 			} else if (monsterStats.health < 1) {
 				setMonsterStats(MonsterFactory(randomMonster));
+				setScore(score + 1);
+				setStunned(false);
 				setPlayerTurn(true);
+				setLog([
+					...log,
+					`The ${monsterStats.title} was defeated! ${playerStats.title} has encountered a ${randomMonster}!`,
+				]);
 			} else if (stunned && !playerTurn) {
+				setLog([...log, `${monsterStats.title} was stunned for 1 turn!`]);
 				setPlayerTurn(true);
 			} else {
 				setPlayerStats({
@@ -37,6 +44,12 @@ const App = () => {
 					health:
 						playerStats.health - (monsterStats.attack - playerStats.armor),
 				});
+				setLog([
+					...log,
+					`${monsterStats.title} attacked ${playerStats.title} for ${
+						monsterStats.attack - playerStats.armor
+					} damage`,
+				]);
 				setPlayerTurn(true);
 			}
 		}, 1500);

@@ -9,7 +9,7 @@
 }
 
 body {
-	height: 100vh;
+	height: fit-content;
 	width: 100vw;
 	padding: 2rem 0;
 	color: #fff;
@@ -20,6 +20,7 @@ body {
 /* global headings */
 h1 {
 	text-align: center;
+	margin-bottom: 1rem;
 }
 
 /* scoreboard */

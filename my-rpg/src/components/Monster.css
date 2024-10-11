@@ -1,16 +1,25 @@
 .monster-card {
 	height: fit-content;
-	width: 28%;
+	width: 30%;
 	margin: 1rem auto;
 	padding: 2rem 0;
 	text-align: center;
 	background-color: #101010;
 	border-radius: 1rem;
 	box-shadow: 0 0 0.5rem 0 #ff0202;
+	position: relative;
 }
 
-.monster-card img {
+.monster-img {
 	max-height: 18rem;
 	max-width: 100%;
 	margin: 1rem 0;
+}
+
+.stun-icon {
+	max-height: 4rem;
+	max-width: 4rem;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
 }
