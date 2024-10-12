@@ -4,6 +4,7 @@ import MonsterFactory from "./components/MonsterFactory";
 import Scoreboard from "./components/Scoreboard";
 import SelectHero from "./components/SelectHero";
 import Battlefield from "./components/Battlefield";
+import GameOver from "./components/GameOver";
 
 export const AppContext = createContext("");
 
@@ -20,6 +21,7 @@ const App = () => {
 	const [playerTurn, setPlayerTurn] = useState(true);
 	const [stunned, setStunned] = useState(false);
 	const [score, setScore] = useState(0);
+	const [gameOver, setGameOver] = useState(false);
 
 	// monster turn
 	useEffect(() => {
@@ -36,7 +38,10 @@ const App = () => {
 					`The ${monsterStats.title} was defeated! ${playerStats.title} has encountered a ${randomMonster}!`,
 				]);
 			} else if (stunned && !playerTurn) {
-				setLog([...log, `${monsterStats.title} was stunned for 1 turn!`]);
+				setLog([
+					...log,
+					`${monsterStats.title} was stunned so it could not attack!`,
+				]);
 				setPlayerTurn(true);
 			} else {
 				setPlayerStats({
@@ -53,6 +58,10 @@ const App = () => {
 				setPlayerTurn(true);
 			}
 		}, 1500);
+
+		if (playerStats.health < 1) {
+			setGameOver(true);
+		}
 	}, [playerTurn]);
 
 	return (
@@ -76,9 +85,14 @@ const App = () => {
 					setScore,
 				}}
 			>
-				<Scoreboard />
-				{!gameStatus && <SelectHero />}
-				{gameStatus && <Battlefield />}
+				{!gameStatus && !gameOver && <SelectHero />}
+				{gameStatus && !gameOver && (
+					<>
+						<Scoreboard />
+						<Battlefield />
+					</>
+				)}
+				{gameOver && <GameOver />}
 			</AppContext.Provider>
 		</>
 	);

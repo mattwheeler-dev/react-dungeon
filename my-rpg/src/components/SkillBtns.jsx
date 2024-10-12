@@ -11,45 +11,39 @@ const SkillBtns = () => {
 		playerTurn,
 		setPlayerTurn,
 		setStunned,
+		log,
+		setLog,
 	} = useContext(AppContext);
 
 	const handleSkill = (e) => {
-		switch (e.target.textContent) {
-			case "Attack":
-				setMonsterStats({
-					...monsterStats,
-					health:
-						monsterStats.health - (playerStats.attack - monsterStats.armor),
-				});
-				setStunned(false);
-				if (cooldown > 0) {
-					cooldown -= 1;
-				}
-				break;
-			case "Shield Bash":
-				setMonsterStats({
-					...monsterStats,
-					health: monsterStats.health - (3 - monsterStats.armor),
-				});
-				setStunned(true);
-				cooldown = 2;
-				break;
-			case "Smoke Bomb":
-				setMonsterStats({
-					...monsterStats,
-					health: monsterStats.health - (3 - monsterStats.armor),
-				});
-				setStunned(true);
-				cooldown = 2;
-				break;
-			case "Ice Shard":
-				setMonsterStats({
-					...monsterStats,
-					health: monsterStats.health - (3 - monsterStats.armor),
-				});
-				setStunned(true);
-				cooldown = 2;
-				break;
+		if (e.target.textContent == "Attack") {
+			setMonsterStats({
+				...monsterStats,
+				health: monsterStats.health - (playerStats.attack - monsterStats.armor),
+			});
+			setLog([
+				...log,
+				`${playerStats.title} attacks ${monsterStats.title} for ${
+					playerStats.attack - monsterStats.armor
+				} damage.`,
+			]);
+			setStunned(false);
+			if (cooldown > 0) {
+				cooldown -= 1;
+			}
+		} else {
+			setMonsterStats({
+				...monsterStats,
+				health: monsterStats.health - (3 - monsterStats.armor),
+			});
+			setLog([
+				...log,
+				`${playerStats.title} used ${playerStats.skills[1]}, dealing ${
+					3 - monsterStats.armor
+				} damage and stunning ${monsterStats.title} for 1 turn.`,
+			]);
+			setStunned(true);
+			cooldown = 2;
 		}
 		setPlayerTurn(!playerTurn);
 	};
@@ -66,8 +60,8 @@ const SkillBtns = () => {
 			</button>
 			<button
 				className={`skill-btn ${playerStats.title.toLowerCase()}`}
-				title={`Deals 3 damage and stuns the monster for 1 turn`}
-				disabled={cooldown > 0}
+				title={`Deals 3 damage and stuns the monster for 1 turn. (Cooldown: 2 Turns)`}
+				disabled={cooldown > 0 || !playerTurn}
 				onClick={handleSkill}
 			>
 				{playerStats.skills[1]}

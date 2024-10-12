@@ -4,7 +4,14 @@ import HeroFactory from "./HeroFactory";
 import "./SelectHero.css";
 
 const SelectHero = () => {
-	const { playerStats, setPlayerStats, setGameStatus } = useContext(AppContext);
+	const {
+		playerStats,
+		setPlayerStats,
+		monsterStats,
+		setGameStatus,
+		log,
+		setLog,
+	} = useContext(AppContext);
 	const knight = HeroFactory("Knight");
 	const rogue = HeroFactory("Rogue");
 	const mage = HeroFactory("Mage");
@@ -31,6 +38,10 @@ const SelectHero = () => {
 	};
 
 	const startGame = () => {
+		setLog([
+			...log,
+			`${playerStats.title} has encountered a ${monsterStats.title}!`,
+		]);
 		setGameStatus(true);
 	};
 
@@ -39,29 +50,35 @@ const SelectHero = () => {
 			<h2>Select Your Hero</h2>
 			<article className="hero-card" onClick={handleSelect}>
 				<img src={knight.image} alt={knight.altText} />
-				<p className="class-title"> {knight.title}</p>
-				<p>Health: {knight.health}</p>
-				<p>Armor: {knight.armor}</p>
-				<p>Attack: {knight.attack}</p>
-				<p>Skills: {`${knight.skills[0]}, ${knight.skills[1]}`}</p>
+				<div className="hero-text">
+					<p className="class-title"> {knight.title}</p>
+					<p>Health: {knight.health}</p>
+					<p>Armor: {knight.armor}</p>
+					<p>Attack: {knight.attack}</p>
+					<p>Skills: {`${knight.skills[0]}, ${knight.skills[1]}`}</p>
+				</div>
 			</article>
 
 			<article className="hero-card" onClick={handleSelect}>
 				<img src={rogue.image} alt={rogue.altText} />
-				<p className="class-title"> {rogue.title}</p>
-				<p>Health: {rogue.health}</p>
-				<p>Armor: {rogue.armor}</p>
-				<p>Attack: {rogue.attack}</p>{" "}
-				<p>Skills: {`${rogue.skills[0]}, ${rogue.skills[1]}`}</p>
+				<div className="hero-text">
+					<p className="class-title"> {rogue.title}</p>
+					<p>Health: {rogue.health}</p>
+					<p>Armor: {rogue.armor}</p>
+					<p>Attack: {rogue.attack}</p>{" "}
+					<p>Skills: {`${rogue.skills[0]}, ${rogue.skills[1]}`}</p>
+				</div>
 			</article>
 
 			<article className="hero-card" onClick={handleSelect}>
 				<img src={mage.image} alt={mage.altText} />
-				<p className="class-title"> {mage.title}</p>
-				<p>Health: {mage.health}</p>
-				<p>Armor: {mage.armor}</p>
-				<p>Attack: {mage.attack}</p>{" "}
-				<p>Skills: {`${mage.skills[0]}, ${mage.skills[1]}`}</p>
+				<div className="hero-text">
+					<p className="class-title"> {mage.title}</p>
+					<p>Health: {mage.health}</p>
+					<p>Armor: {mage.armor}</p>
+					<p>Attack: {mage.attack}</p>{" "}
+					<p>Skills: {`${mage.skills[0]}, ${mage.skills[1]}`}</p>
+				</div>
 			</article>
 
 			<button
