@@ -1,16 +1,15 @@
 .player-card {
 	height: fit-content;
-	width: 40%;
+	width: 45%;
 	margin: 1rem auto;
 	padding: 1rem 2rem;
 	text-align: center;
-	background-color: #101010;
-	border-radius: 1rem;
+	background-color: var(--gray);
+	border-radius: var(--radius);
 	box-shadow: 0 0 0.5rem 0 #00eeff;
 }
 
 .player-card img {
-	max-height: 20rem;
 	max-width: 100%;
 	margin: 1rem 0;
 }

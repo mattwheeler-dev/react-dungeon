@@ -1,0 +1,38 @@
+.info-btn {
+	padding: 0.2rem 0.4rem;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+}
+
+.info {
+	display: none;
+	width: 80%;
+	margin: 0 auto;
+	padding: 1rem;
+	background-color: var(--gray);
+	border: 2px solid #ffffff;
+	border-radius: var(--radius);
+	position: absolute;
+	left: 10%;
+	z-index: 99;
+}
+
+.info.open {
+	display: block;
+}
+
+.info h3,
+.info h4 {
+	text-align: center;
+}
+
+.info p,
+.info ul {
+	width: 90%;
+	margin: 0 auto 1rem auto;
+}
+
+.info ul li {
+	margin-top: 0.1rem;
+}

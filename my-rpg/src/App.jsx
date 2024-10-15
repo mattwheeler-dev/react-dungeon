@@ -1,8 +1,9 @@
 import { useState, useEffect, createContext } from "react";
 import HeroFactory from "./components/HeroFactory";
 import MonsterFactory from "./components/MonsterFactory";
-import Scoreboard from "./components/Scoreboard";
+import Info from "./components/Info";
 import SelectHero from "./components/SelectHero";
+import Scoreboard from "./components/Scoreboard";
 import Battlefield from "./components/Battlefield";
 import GameOver from "./components/GameOver";
 
@@ -67,6 +68,7 @@ const App = () => {
 	return (
 		<>
 			<h1>MW-Dev{`'`}s Dungeon</h1>
+			<Info />
 			<AppContext.Provider
 				value={{
 					playerStats,
