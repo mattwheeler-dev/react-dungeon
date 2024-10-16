@@ -7,7 +7,7 @@ const Monster = () => {
 	const stunIcon = playerStats.skillImg;
 
 	return (
-		<div className="monster-card">
+		<div className="monster card">
 			{stunned && <img src={stunIcon} className="stun-icon" />}
 			<p>{monsterStats.title}</p>
 			<img src={monsterStats.image} className="monster-img" />

@@ -6,8 +6,8 @@ const Player = () => {
 	const { playerStats } = useContext(AppContext);
 
 	return (
-		<div className="player-card">
-			<h2>{playerStats.title}</h2>
+		<div className="player card">
+			<h3>{playerStats.title}</h3>
 			{playerStats.image && (
 				<img src={playerStats.image} alt={playerStats.altText} />
 			)}

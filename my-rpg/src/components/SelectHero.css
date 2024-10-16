@@ -31,10 +31,20 @@
 }
 
 .class-title {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
+	font-weight: 600;
 }
 
 .start-btn {
-	margin: 1rem 0;
+	margin-top: 1rem;
 	padding: 0.5rem 1rem;
+	color: #fff;
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 10%;
+}
+
+.start-btn:disabled {
+	text-decoration: line-through;
+	background-color: #303030;
 }

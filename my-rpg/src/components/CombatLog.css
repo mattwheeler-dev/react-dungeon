@@ -3,7 +3,7 @@
 	width: 90%;
 	padding: 1rem;
 	background-color: #000;
-	border: 2px solid #fff;
+	border: var(--border);
 	border-radius: 1rem;
 	overflow-y: scroll;
 }

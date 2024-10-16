@@ -5,30 +5,47 @@
 	justify-content: space-around;
 }
 
+/* cards */
+.card {
+	height: 20rem;
+	width: 45%;
+	padding: 1rem 0;
+	background-color: var(--gray);
+	border-radius: var(--radius);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.card img {
+	height: 10rem;
+}
+
 .skill-btns {
 	width: 100%;
-	margin: 2rem auto;
+	margin: 1rem auto;
 	text-align: center;
 }
 
 .skill-btns button {
 	cursor: pointer;
-	height: 8rem;
-	width: 8rem;
-	margin: 1rem;
-	font-size: 1.25rem;
+	height: 7rem;
+	width: 7rem;
+	margin: 0 1rem;
+	font-size: 1rem;
 	color: #fff;
-	background-color: #101010;
+	background-color: var(--gray);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	border: 2px solid #fff;
+	border: var(--border);
 	border-radius: 50%;
 	text-shadow: 0 0 0.5rem #000;
 }
 
 .skill-btns button:disabled {
-	background-color: #c20101;
+	background-color: #bd0000;
 }
 
 .attack-btn {
