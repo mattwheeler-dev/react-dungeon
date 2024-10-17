@@ -85,6 +85,8 @@ const App = () => {
 					setStunned,
 					score,
 					setScore,
+					gameOver,
+					setGameOver,
 				}}
 			>
 				{!gameStatus && !gameOver && <SelectHero />}

@@ -3,11 +3,29 @@ import { AppContext } from "../App";
 import "./GameOver.css";
 
 const GameOver = () => {
-	const { score } = useContext(AppContext);
+	const {
+		setPlayerStats,
+		setGameStatus,
+		setLog,
+		score,
+		setScore,
+		setGameOver,
+	} = useContext(AppContext);
+	const startNewGame = () => {
+		setPlayerStats("");
+		setGameStatus(false);
+		setLog([""]);
+		setScore(0);
+		setGameOver(false);
+	};
+
 	return (
 		<section className="game-over">
-			<h2>Game Over</h2>
-			<h3>You defeated {score} monsters!</h3>
+			<h3>Game Over</h3>
+			<h4>You defeated {score} monsters!</h4>
+			<button className="new-game" onClick={startNewGame}>
+				New Game
+			</button>
 		</section>
 	);
 };

@@ -2,6 +2,15 @@
 	text-align: center;
 }
 
-.game-over h2 {
+.game-over h3 {
 	margin: 3rem auto 1rem auto;
+}
+
+.new-game {
+	margin-top: 1rem;
+	padding: 0.5rem 1rem;
+	color: #fff;
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: var(--radius);
 }

@@ -3,9 +3,14 @@
 	position: relative;
 }
 
+.monster-img {
+	height: 8rem;
+	margin: 1rem 0;
+}
+
 .stun-icon {
-	max-height: 2rem;
-	max-width: 2rem;
+	height: 2rem;
+	width: 2rem;
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
