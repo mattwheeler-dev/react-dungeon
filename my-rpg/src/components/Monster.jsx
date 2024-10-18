@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
+import MonsterFactory from "./MonsterFactory";
 import "./Monster.css";
 
 const Monster = () => {
 	const { playerStats, monsterStats, playerTurn, stunned } =
 		useContext(AppContext);
+	const maxHealth = MonsterFactory(monsterStats.title).health;
 	const stunIcon = playerStats.skillImg;
 
 	return (
@@ -12,7 +14,19 @@ const Monster = () => {
 			{stunned && <img src={stunIcon} className="stun-icon" />}
 			<p>{monsterStats.title}</p>
 			<img src={monsterStats.image} className="monster-img" />
-			<p>Health: {monsterStats.health}</p>
+			<p
+				className="health"
+				style={{
+					background: `linear-gradient(
+		90deg,
+		#ff0000 0%,
+		#ff0000 ${(monsterStats.health / maxHealth) * 100}%,
+		#000 ${(monsterStats.health / maxHealth) * 100 + 1}%
+	)`,
+				}}
+			>
+				Health: {monsterStats.health}
+			</p>
 			<p>Armor: {monsterStats.armor}</p>
 			<p>Attack: {monsterStats.attack}</p>
 		</div>

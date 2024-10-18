@@ -22,6 +22,13 @@
 	max-height: 10rem;
 }
 
+.health {
+	width: 90%;
+	text-align: center;
+	border: 1px solid #fff;
+}
+
+/* skill btns */
 .skill-btns {
 	width: 100%;
 	margin: 1rem auto;
