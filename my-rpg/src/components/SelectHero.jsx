@@ -48,7 +48,7 @@ const SelectHero = () => {
 	return (
 		<section className="select-hero-container">
 			<h2>Select Your Hero</h2>
-			<article className="hero-card" onClick={handleSelect}>
+			<article className="hero-card knight" onClick={handleSelect}>
 				<img src={knight.image} alt={knight.altText} />
 				<div className="hero-text">
 					<p className="class-title"> {knight.title}</p>
@@ -59,7 +59,7 @@ const SelectHero = () => {
 				</div>
 			</article>
 
-			<article className="hero-card" onClick={handleSelect}>
+			<article className="hero-card rogue" onClick={handleSelect}>
 				<img src={rogue.image} alt={rogue.altText} />
 				<div className="hero-text">
 					<p className="class-title"> {rogue.title}</p>
@@ -70,7 +70,7 @@ const SelectHero = () => {
 				</div>
 			</article>
 
-			<article className="hero-card" onClick={handleSelect}>
+			<article className="hero-card mage" onClick={handleSelect}>
 				<img src={mage.image} alt={mage.altText} />
 				<div className="hero-text">
 					<p className="class-title"> {mage.title}</p>

@@ -3,11 +3,12 @@ import { AppContext } from "../App";
 import "./Monster.css";
 
 const Monster = () => {
-	const { playerStats, monsterStats, stunned } = useContext(AppContext);
+	const { playerStats, monsterStats, playerTurn, stunned } =
+		useContext(AppContext);
 	const stunIcon = playerStats.skillImg;
 
 	return (
-		<div className="monster card">
+		<div className={`monster card ${!playerTurn && "turn"}`}>
 			{stunned && <img src={stunIcon} className="stun-icon" />}
 			<p>{monsterStats.title}</p>
 			<img src={monsterStats.image} className="monster-img" />

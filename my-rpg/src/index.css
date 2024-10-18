@@ -4,6 +4,9 @@
 	--gray: #101010;
 	--border: 2px solid #fff;
 	--radius: 1rem;
+	--knight: #ff9d00;
+	--rogue: #3bcf00;
+	--mage: #4aeaff;
 }
 
 * {
@@ -25,7 +28,7 @@ body {
 
 /* global headings */
 h1 {
-	font-size: 1.75rem;
+	font-size: 1.5rem;
 }
 
 h2 {

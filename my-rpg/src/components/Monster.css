@@ -1,6 +1,9 @@
 .monster {
-	box-shadow: 0 0 0.25rem 0 #ff0202;
 	position: relative;
+}
+
+.monster.turn {
+	box-shadow: 0 0 0.5rem 0 #ff0202;
 }
 
 .monster-img {

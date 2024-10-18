@@ -18,8 +18,16 @@
 	justify-content: space-between;
 }
 
-.hero-card.chosen {
-	box-shadow: 0 0 1rem 0 lime;
+.hero-card.knight.chosen {
+	box-shadow: 0 0 0.75rem 0 var(--knight);
+}
+
+.hero-card.rogue.chosen {
+	box-shadow: 0 0 0.75rem 0 var(--rogue);
+}
+
+.hero-card.mage.chosen {
+	box-shadow: 0 0 0.75rem 0 var(--mage);
 }
 
 .hero-card img {
@@ -28,10 +36,10 @@
 
 .hero-text p {
 	margin: 0.25rem 0;
+	font-size: 0.8rem;
 }
 
 .class-title {
-	font-size: 1.2rem;
 	font-weight: 600;
 }
 

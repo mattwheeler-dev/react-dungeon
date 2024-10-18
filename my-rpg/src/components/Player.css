@@ -1,5 +1,13 @@
-.player {
-	box-shadow: 0 0 0.25rem 0 #00eeff;
+.player.knight.turn {
+	box-shadow: 0 0 0.75rem 0 var(--knight);
+}
+
+.player.rogue.turn {
+	box-shadow: 0 0 0.75rem 0 var(--rogue);
+}
+
+.player.mage.turn {
+	box-shadow: 0 0 0.75rem 0 var(--mage);
 }
 
 .player img {

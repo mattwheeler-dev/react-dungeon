@@ -3,10 +3,14 @@ import { AppContext } from "../App";
 import "./Player.css";
 
 const Player = () => {
-	const { playerStats } = useContext(AppContext);
+	const { playerStats, playerTurn } = useContext(AppContext);
 
 	return (
-		<div className="player card">
+		<div
+			className={`player card ${playerStats.title.toLowerCase()} ${
+				playerTurn && "turn"
+			}`}
+		>
 			<h3>{playerStats.title}</h3>
 			{playerStats.image && (
 				<img src={playerStats.image} alt={playerStats.altText} />
