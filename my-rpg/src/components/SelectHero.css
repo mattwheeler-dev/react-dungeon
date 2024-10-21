@@ -16,16 +16,20 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	transition: var(--transition);
 }
 
+.hero-card.knight:hover,
 .hero-card.knight.chosen {
 	box-shadow: 0 0 0.75rem 0 var(--knight);
 }
 
+.hero-card.rogue:hover,
 .hero-card.rogue.chosen {
 	box-shadow: 0 0 0.75rem 0 var(--rogue);
 }
 
+.hero-card.mage:hover,
 .hero-card.mage.chosen {
 	box-shadow: 0 0 0.75rem 0 var(--mage);
 }
