@@ -27,11 +27,6 @@ body {
 	overflow-x: clip;
 }
 
-section {
-	max-width: 1100px;
-	margin: auto;
-}
-
 /* global headings */
 h1 {
 	font-size: 1.5rem;
@@ -72,6 +67,11 @@ button:hover {
 
 /* media query min-width 600px */
 @media (min-width: 600px) {
+	section {
+		max-width: 1100px;
+		margin: 2rem auto;
+	}
+
 	.select-hero-container {
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -80,6 +80,7 @@ button:hover {
 
 	.hero-card {
 		width: 31%;
+		margin: 2rem 0;
 		flex-direction: column;
 	}
 
