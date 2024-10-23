@@ -1,4 +1,4 @@
-# My RPG
+# React Dungeon
 
 - Built with Reactjs and Vite
 
