@@ -15,6 +15,7 @@ const SelectHero = () => {
 	const knight = HeroFactory("Knight");
 	const rogue = HeroFactory("Rogue");
 	const mage = HeroFactory("Mage");
+	const heroes = [knight, rogue, mage];
 
 	const handleSelect = (e) => {
 		const cards = document.querySelectorAll(".hero-card");
@@ -45,42 +46,29 @@ const SelectHero = () => {
 		setGameStatus(true);
 	};
 
+	const heroCards = heroes.map((hero) => {
+		return (
+			<article
+				className={`hero-card ${hero.title.toLowerCase()} `}
+				onClick={handleSelect}
+				key={hero.title}
+			>
+				<img src={hero.image} alt={hero.altText} />
+				<div className="hero-text">
+					<p className="class-title"> {hero.title}</p>
+					<p>Health: {hero.health}</p>
+					<p>Armor: {hero.armor}</p>
+					<p>Attack: {hero.attack}</p>
+					<p>Skills: {`${hero.skills[0]}, ${hero.skills[1]}`}</p>
+				</div>
+			</article>
+		);
+	});
+
 	return (
 		<section className="select-hero-container">
 			<h2>Select Your Hero</h2>
-			<article className="hero-card knight" onClick={handleSelect}>
-				<img src={knight.image} alt={knight.altText} />
-				<div className="hero-text">
-					<p className="class-title"> {knight.title}</p>
-					<p>Health: {knight.health}</p>
-					<p>Armor: {knight.armor}</p>
-					<p>Attack: {knight.attack}</p>
-					<p>Skills: {`${knight.skills[0]}, ${knight.skills[1]}`}</p>
-				</div>
-			</article>
-
-			<article className="hero-card rogue" onClick={handleSelect}>
-				<img src={rogue.image} alt={rogue.altText} />
-				<div className="hero-text">
-					<p className="class-title"> {rogue.title}</p>
-					<p>Health: {rogue.health}</p>
-					<p>Armor: {rogue.armor}</p>
-					<p>Attack: {rogue.attack}</p>{" "}
-					<p>Skills: {`${rogue.skills[0]}, ${rogue.skills[1]}`}</p>
-				</div>
-			</article>
-
-			<article className="hero-card mage" onClick={handleSelect}>
-				<img src={mage.image} alt={mage.altText} />
-				<div className="hero-text">
-					<p className="class-title"> {mage.title}</p>
-					<p>Health: {mage.health}</p>
-					<p>Armor: {mage.armor}</p>
-					<p>Attack: {mage.attack}</p>{" "}
-					<p>Skills: {`${mage.skills[0]}, ${mage.skills[1]}`}</p>
-				</div>
-			</article>
-
+			{heroCards}
 			<button
 				className="start-btn"
 				onClick={startGame}
