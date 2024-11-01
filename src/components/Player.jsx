@@ -4,7 +4,7 @@ import HeroFactory from "./HeroFactory";
 import "./Player.css";
 
 const Player = () => {
-	const { playerStats, playerTurn } = useContext(AppContext);
+	const { playerName, playerStats, playerTurn } = useContext(AppContext);
 	const maxHealth = HeroFactory(`${playerStats.title}`).health;
 
 	return (
@@ -13,7 +13,7 @@ const Player = () => {
 				playerTurn && "turn"
 			}`}
 		>
-			<h3>{playerStats.title}</h3>
+			<h3>{playerName} the {playerStats.title}</h3>
 			{playerStats.image && (
 				<img src={playerStats.image} alt={playerStats.altText} />
 			)}

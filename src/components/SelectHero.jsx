@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
 import HeroFactory from "./HeroFactory";
+import NameInput from "./NameInput";
 import "./SelectHero.css";
 
 const SelectHero = () => {
 	const {
+        playerName,
 		playerStats,
 		setPlayerStats,
 		monsterStats,
@@ -69,13 +71,14 @@ const SelectHero = () => {
 		<section className="select-hero-container">
 			<h2>Select Your Hero</h2>
 			{heroCards}
+            <NameInput />
 			<button
 				className="start-btn"
 				onClick={startGame}
 				disabled={
 					playerStats.title != "Knight" &&
 					playerStats.title != "Rogue" &&
-					playerStats.title != "Mage"
+					playerStats.title != "Mage" || !playerName
 				}
 			>
 				Start Game!

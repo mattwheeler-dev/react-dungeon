@@ -13,6 +13,7 @@ const monsters = ["Slime", "Skeleton", "Shroomer"];
 
 const App = () => {
 	const randomMonster = monsters[Math.floor(Math.random() * 3)];
+    const [playerName, setPlayerName] = useState("")
 	const [playerStats, setPlayerStats] = useState(HeroFactory(""));
 	const [monsterStats, setMonsterStats] = useState(
 		MonsterFactory(randomMonster)
@@ -69,8 +70,11 @@ const App = () => {
 		<>
 			<h1>MW-Dev{`'`}s Dungeon</h1>
 			<Info />
+
 			<AppContext.Provider
 				value={{
+                    playerName,
+                    setPlayerName,
 					playerStats,
 					setPlayerStats,
 					monsterStats,
@@ -89,14 +93,16 @@ const App = () => {
 					setGameOver,
 				}}
 			>
-				{!gameStatus && !gameOver && <SelectHero />}
-				{gameStatus && !gameOver && (
-					<>
-						<Scoreboard />
-						<Battlefield />
-					</>
-				)}
-				{gameOver && <GameOver />}
+                {!gameStatus && !gameOver && <SelectHero />}
+
+                {gameStatus && !gameOver &&
+                    <>
+                        <Scoreboard />
+                        <Battlefield />
+                    </>
+                }
+
+                {gameOver && <GameOver />}
 			</AppContext.Provider>
 		</>
 	);
