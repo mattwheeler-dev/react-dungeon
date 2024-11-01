@@ -43,7 +43,7 @@ const SelectHero = () => {
 	const startGame = () => {
 		setLog([
 			...log,
-			`${playerStats.title} has encountered a ${monsterStats.title}!`,
+			`${playerName} the ${playerStats.title} has bravely entered the dungeon! They immediately encounter a ${monsterStats.title}!`,
 		]);
 		setGameStatus(true);
 	};

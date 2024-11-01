@@ -37,7 +37,7 @@ const App = () => {
 				setPlayerTurn(true);
 				setLog([
 					...log,
-					`The ${monsterStats.title} was defeated! ${playerStats.title} has encountered a ${randomMonster}!`,
+					`The ${monsterStats.title} was defeated! ${playerName} now faces a ${randomMonster}!`,
 				]);
 			} else if (stunned && !playerTurn) {
 				setLog([
@@ -53,7 +53,7 @@ const App = () => {
 				});
 				setLog([
 					...log,
-					`${monsterStats.title} attacked ${playerStats.title} for ${
+					`${monsterStats.title} attacked ${playerName} for ${
 						monsterStats.attack - playerStats.armor
 					} damage`,
 				]);
@@ -62,7 +62,12 @@ const App = () => {
 		}, 1500);
 
 		if (playerStats.health < 1) {
+            setLog([
+                ...log,
+                `${playerName} the ${playerStats.title} has been defeated... `,
+            ]);
 			setGameOver(true);
+            setMonsterStats(MonsterFactory(randomMonster))
 		}
 	}, [playerTurn]);
 

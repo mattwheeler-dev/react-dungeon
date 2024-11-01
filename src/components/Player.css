@@ -1,3 +1,7 @@
+.player h3 {
+    font-weight: 400;
+}
+
 .player.knight.turn {
 	box-shadow: 0 0 0.75rem 0 var(--knight);
 }

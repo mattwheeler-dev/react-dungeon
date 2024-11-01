@@ -4,7 +4,7 @@ import HeroFactory from "./HeroFactory";
 import "./Player.css";
 
 const Player = () => {
-	const { playerName, playerStats, playerTurn } = useContext(AppContext);
+	const { playerName, playerStats, playerTurn, gameOver } = useContext(AppContext);
 	const maxHealth = HeroFactory(`${playerStats.title}`).health;
 
 	return (
@@ -17,21 +17,24 @@ const Player = () => {
 			{playerStats.image && (
 				<img src={playerStats.image} alt={playerStats.altText} />
 			)}
-			<p
-				className="health"
-				style={{
-					background: `linear-gradient(
-		90deg,
-		#ff0000 0%,
-		#ff0000 ${(playerStats.health / maxHealth) * 100}%,
-		#000 ${(playerStats.health / maxHealth) * 100 + 1}%
-	)`,
-				}}
-			>
-				Health: {playerStats.health}
-			</p>
-			<p>Armor: {playerStats.armor}</p>
-			<p>Attack: {playerStats.attack}</p>
+            { !gameOver && 
+                <>
+                    <p
+                        className="health"
+                        style={{
+                            background: `linear-gradient(
+                            90deg,
+                            #cc0000 0%,
+                            #cc0000 ${(playerStats.health / maxHealth) * 100}%,
+                            #000 ${(playerStats.health / maxHealth) * 100 + 1}%)`,
+                        }}
+                    >
+                        Health: {playerStats.health}
+                    </p>
+                    <p>Armor: {playerStats.armor}</p>
+                    <p>Attack: {playerStats.attack}</p>
+                </>
+            }
 		</div>
 	);
 };

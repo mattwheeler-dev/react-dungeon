@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { AppContext } from "../App"
 
 const NameInput = () => {
-    const {setPlayerName} = useContext(AppContext)
+    const { setPlayerName } = useContext(AppContext)
 
     const handleInput = (e) => {
         setPlayerName(e.target.value)

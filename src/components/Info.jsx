@@ -21,7 +21,7 @@ const Info = () => {
 				</p>
 				<h4>How it works:</h4>
 				<ul>
-					<li>Choose your hero, then start the game</li>
+					<li>Choose your class and name your hero, then start the game</li>
 					<li>
 						Each hero has a basic attack skill which will deal damage based on
 						their attack, and a unique secondary skill that will deal 3 damage
@@ -35,7 +35,7 @@ const Info = () => {
 						monster will appear
 					</li>
 					<li>
-						When the hero{`'`}s health reaches 0...well, that{`'`}s game over
+						When the hero{`'`}s health reaches 0... well, that{`'`}s game over
 					</li>
 					<li>Your score is the amount of monsters you were able to defeat</li>
 				</ul>
@@ -45,7 +45,7 @@ const Info = () => {
 						Armor reduces all damage taken (3 Attack - 1 Armor = 2 damage)
 					</li>
 					<li>Skill cooldowns do not reset on monster defeat</li>
-					<li>The combat log can help keep track of each turn</li>
+					<li>The combat log can help keep track of what happens</li>
 					<li>
 						The monster is always selected at random, so every adventure will be
 						different

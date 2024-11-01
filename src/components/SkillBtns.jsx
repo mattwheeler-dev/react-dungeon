@@ -5,6 +5,7 @@ let cooldown = 0;
 
 const SkillBtns = () => {
 	const {
+        playerName,
 		playerStats,
 		monsterStats,
 		setMonsterStats,
@@ -23,7 +24,7 @@ const SkillBtns = () => {
 			});
 			setLog([
 				...log,
-				`${playerStats.title} attacks ${monsterStats.title} for ${
+				`${playerName} attacks ${monsterStats.title} for ${
 					playerStats.attack - monsterStats.armor
 				} damage.`,
 			]);
@@ -38,7 +39,7 @@ const SkillBtns = () => {
 			});
 			setLog([
 				...log,
-				`${playerStats.title} used ${playerStats.skills[1]}, dealing ${
+				`${playerName} used ${playerStats.skills[1]}, dealing ${
 					3 - monsterStats.armor
 				} damage and stunning ${monsterStats.title} for 1 turn.`,
 			]);
