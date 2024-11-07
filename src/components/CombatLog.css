@@ -1,6 +1,7 @@
 .combat-log {
 	height: 10rem;
 	width: 90%;
+    max-width: 800px;
     margin-top: 1rem;
 	padding: 1rem;
 	background-color: #000;

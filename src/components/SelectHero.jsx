@@ -69,7 +69,7 @@ const SelectHero = () => {
 
 	return (
 		<section className="select-hero-container">
-			<h2>Select Your Hero</h2>
+			<h2>Select Your Class</h2>
 			{heroCards}
             <NameInput />
 			<button
