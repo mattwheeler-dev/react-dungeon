@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Info.css";
+import "../assets/styles/Info.css"
 
 const Info = () => {
 	const [isOpen, setIsOpen] = useState(false);

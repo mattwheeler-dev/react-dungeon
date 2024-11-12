@@ -56,17 +56,17 @@
 }
 
 .attack-btn {
-	background-image: url("../assets/sword.png");
+	background-image: url("../images/sword.png");
 }
 
 .skill-btn.knight {
-	background-image: url("../assets/shield.png");
+	background-image: url("../images/shield.png");
 }
 
 .skill-btn.rogue {
-	background-image: url("../assets/smoke-bomb.png");
+	background-image: url("../images/smoke-bomb.png");
 }
 
 .skill-btn.mage {
-	background-image: url("../assets/ice-shard.png");
+	background-image: url("../images/ice-shard.png");
 }

@@ -1,13 +1,28 @@
 import { useState, useEffect, createContext } from "react";
+import { initializeApp } from "firebase/app";
+import { getFirestore, addDoc, collection } from "firebase/firestore";
 import HeroFactory from "./components/HeroFactory";
 import MonsterFactory from "./components/MonsterFactory";
-import Info from "./components/Info";
-import SelectHero from "./components/SelectHero";
 import Scoreboard from "./components/Scoreboard";
-import Battlefield from "./components/Battlefield";
-import GameOver from "./components/GameOver";
+import SelectHero from "./pages/SelectHero";
+import Battlefield from "./pages/Battlefield";
+import GameOver from "./pages/GameOver";
+import Info from "./pages/Info";
 
 export const AppContext = createContext("");
+
+const firebaseConfig = {
+    apiKey: "AIzaSyA0l14UCW0YvqCoeL8l2BCawmlEROUwx_g",
+    authDomain: "react-dungeon-616f2.firebaseapp.com",
+    projectId: "react-dungeon-616f2",
+    storageBucket: "react-dungeon-616f2.firebasestorage.app",
+    messagingSenderId: "866416045499",
+    appId: "1:866416045499:web:7f19836ad2664b8f87a89e",
+    measurementId: "G-5YQH28P9J9"
+  };
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 const monsters = ["Slime", "Skeleton", "Shroomer"];
 
@@ -67,7 +82,17 @@ const App = () => {
                 `${playerName} the ${playerStats.title} has been defeated... `,
             ]);
 			setGameOver(true);
-            setMonsterStats(MonsterFactory(randomMonster))
+            setMonsterStats(MonsterFactory(randomMonster));
+            try {
+                const docRef = addDoc(collection(db, "scores"), {
+                    "Hero Name": `${playerName}`,
+                    "Class": `${playerStats.title}`,
+                    "Score": `${score}`
+                })
+                console.log(`Document written with ID: ${docRef.id}`)
+            } catch (e) {
+                console.error(`Error adding ${playerName}'s score to leaderboard...`, e)
+            }
 		}
 	}, [playerTurn]);
 

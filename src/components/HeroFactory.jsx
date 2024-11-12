@@ -1,9 +1,9 @@
-import knightImg from "../assets/knight.png";
-import rogueImg from "../assets/rogue.png";
-import mageImg from "../assets/mage.png";
-import starsImg from "../assets/stars.png";
-import smokeImg from "../assets/smoke.png";
-import frozenImg from "../assets/freeze.png";
+import knightImg from "../assets/images/knight.png";
+import rogueImg from "../assets/images/rogue.png";
+import mageImg from "../assets/images/mage.png";
+import starsImg from "../assets/images/stars.png";
+import smokeImg from "../assets/images/smoke.png";
+import frozenImg from "../assets/images/freeze.png";
 
 const HeroFactory = (title) => {
 	switch (title) {

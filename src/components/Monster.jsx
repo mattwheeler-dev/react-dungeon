@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
-import MonsterFactory from "./MonsterFactory";
-import "./Monster.css";
+import MonsterFactory from "../components/MonsterFactory";
+import "../assets/styles/Monster.css";
 
 const Monster = () => {
 	const { playerStats, monsterStats, playerTurn, stunned } =

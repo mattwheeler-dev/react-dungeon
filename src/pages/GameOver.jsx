@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
-import CombatLog from "./CombatLog";
-import "./GameOver.css";
+import CombatLog from "../components/CombatLog";
+import "../assets/styles/gameOver.css";
 
 const GameOver = () => {
 	const {

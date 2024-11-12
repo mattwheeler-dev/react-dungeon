@@ -1,6 +1,6 @@
-import slimeImg from "../assets/slime.png";
-import skeleImg from "../assets/skeleton.png";
-import shroomImg from "../assets/shroomer.png";
+import slimeImg from "../assets/images/slime.png";
+import skeleImg from "../assets/images/skeleton.png";
+import shroomImg from "../assets/images/shroomer.png";
 
 const MonsterFactory = (monster) => {
 	switch (monster) {

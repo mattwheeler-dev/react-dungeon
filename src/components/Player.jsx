@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
-import HeroFactory from "./HeroFactory";
-import "./Player.css";
+import HeroFactory from "../components/HeroFactory";
+import "../assets/styles/Player.css";
 
 const Player = () => {
 	const { playerName, playerStats, playerTurn, gameOver } = useContext(AppContext);

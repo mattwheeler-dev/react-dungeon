@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
-import "./CombatLog.css";
+import "../assets/styles/CombatLog.css";
 
 const CombatLog = () => {
 	const { log } = useContext(AppContext);

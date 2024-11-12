@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
-import HeroFactory from "./HeroFactory";
-import NameInput from "./NameInput";
-import "./SelectHero.css";
+import HeroFactory from "../components/HeroFactory";
+import NameInput from "../components/NameInput";
+import "../assets/styles/SelectHero.css";
 
 const SelectHero = () => {
 	const {
