@@ -10,7 +10,7 @@
 	height: 20rem;
 	width: 45%;
 	padding: 1rem 0;
-	background-color: var(--gray);
+	background-color: var(--blue);
 	border-radius: var(--radius);
 	display: flex;
 	flex-direction: column;
@@ -42,7 +42,7 @@
 	margin: 0 1rem;
 	font-size: 1rem;
 	color: #fff;
-	background-color: var(--gray);
+	background-color: var(--blue);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;

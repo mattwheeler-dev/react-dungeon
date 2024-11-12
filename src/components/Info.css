@@ -3,7 +3,6 @@
 	font-weight: 300;
 	color: #fff;
 	background-color: transparent;
-	border: 1px solid #fff;
 	border-radius: var(--radius);
 	position: absolute;
 	top: 0.5rem;
@@ -15,7 +14,7 @@
 	width: 80%;
 	margin: 0 auto;
 	padding: 1rem;
-	background-color: var(--gray);
+	background-color: var(--midnight);
 	border: var(--border);
 	border-radius: var(--radius);
 	position: absolute;
