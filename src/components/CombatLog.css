@@ -26,12 +26,12 @@
 }
 
 .combat-log::-webkit-scrollbar-track {
-	background-color: var(--blue);
-	border: 1px solid #fff;
+	background-color: var(--midnight);
+	border: 1px solid var(--orange);
 	border-radius: var(--radius);
 }
 
 .combat-log::-webkit-scrollbar-thumb {
-	background-color: #fff;
+	background-color: var(--blue);
 	border-radius: var(--radius);
 }
