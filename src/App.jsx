@@ -1,13 +1,13 @@
 import { useState, useEffect, createContext } from "react";
 import { initializeApp } from "firebase/app";
-import { getFirestore, addDoc, collection } from "firebase/firestore";
+import { getFirestore,  collection, addDoc, getDocs, query, orderBy, limit } from "firebase/firestore";
 import HeroFactory from "./components/HeroFactory";
 import MonsterFactory from "./components/MonsterFactory";
 import Scoreboard from "./components/Scoreboard";
 import SelectHero from "./pages/SelectHero";
 import Battlefield from "./pages/Battlefield";
 import GameOver from "./pages/GameOver";
-import Info from "./pages/Info";
+import Guide from "./pages/Guide";
 
 export const AppContext = createContext("");
 
@@ -23,6 +23,14 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const scoresRef = collection(db, "scores");
+const leaders = query(scoresRef, orderBy("Score", "desc"), limit(10))
+const querySnapshot = await getDocs(leaders);
+const leaderboard = [];
+querySnapshot.forEach((doc) => {
+    leaderboard.push(doc.data())
+    console.log(doc.id, " => ", doc.data())
+})
 
 const monsters = ["Slime", "Skeleton", "Shroomer"];
 
@@ -99,7 +107,7 @@ const App = () => {
 	return (
 		<>
 			<h1>MW-Dev{`'`}s Dungeon</h1>
-			<Info />
+			<Guide />
 
 			<AppContext.Provider
 				value={{
@@ -121,6 +129,7 @@ const App = () => {
 					setScore,
 					gameOver,
 					setGameOver,
+                    leaderboard
 				}}
 			>
                 {!gameStatus && !gameOver && <SelectHero />}

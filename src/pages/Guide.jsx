@@ -1,19 +1,19 @@
 import { useState } from "react";
-import "../assets/styles/Info.css"
+import "../assets/styles/Guide.css"
 
-const Info = () => {
+const Guide = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const toggleInfo = () => {
+	const toggleGuide = () => {
 		setIsOpen(!isOpen);
 	};
 
 	return (
 		<>
-			<button className="info-btn" onClick={toggleInfo}>
+			<button className="guide-btn" onClick={toggleGuide}>
 				Guide
 			</button>
-			<div className={`info ${isOpen && "open"}`}>
+			<div className={`guide ${isOpen && "open"}`}>
 				<h3>Guide</h3>
 				<p>
 					Greetings! Your quest is to defeat as many monsters as you can before
@@ -56,4 +56,4 @@ const Info = () => {
 	);
 };
 
-export default Info;
+export default Guide;

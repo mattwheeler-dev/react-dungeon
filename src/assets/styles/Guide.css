@@ -1,4 +1,4 @@
-.info-btn {
+.guide-btn {
 	padding: 0.2rem 0.4rem;
 	font-weight: 300;
 	color: #fff;
@@ -9,7 +9,7 @@
 	right: 0.5rem;
 }
 
-.info {
+.guide {
 	display: none;
 	width: 80%;
 	margin: 0 auto;
@@ -22,21 +22,21 @@
 	z-index: 99;
 }
 
-.info.open {
+.guide.open {
 	display: block;
 }
 
-.info h3,
-.info h4 {
+.guide h3,
+.guide h4 {
 	text-align: center;
 }
 
-.info p,
-.info ul {
+.guide p,
+.guide ul {
 	width: 90%;
 	margin: 0 auto 1rem auto;
 }
 
-.info ul li {
+.guide ul li {
 	margin-top: 0.1rem;
 }
