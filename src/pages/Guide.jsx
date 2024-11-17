@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../assets/styles/Guide.css"
+import "../assets/styles/Modals.css"
 
 const Guide = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +14,9 @@ const Guide = () => {
 				Guide
 			</button>
 			<div className={`guide ${isOpen && "open"}`}>
+            <button className="guide-btn" onClick={toggleGuide}>
+				X
+			</button>
 				<h3>Guide</h3>
 				<p>
 					Greetings! Your quest is to defeat as many monsters as you can before

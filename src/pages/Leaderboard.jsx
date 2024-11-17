@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { AppContext } from "../App";
-import "../assets/styles/Leaderboard.css"
+import "../assets/styles/Modals.css"
 
 
 const Leaderboard = () => {

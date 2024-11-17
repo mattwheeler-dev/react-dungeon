@@ -25,19 +25,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const scoresRef = collection(db, "scores");
 const leaders = query(scoresRef, orderBy("Score", "desc"), limit(10))
-const querySnapshot = await getDocs(leaders);
-const leaderboard = [];
-querySnapshot.forEach((doc) => {
-    leaderboard.push(doc.data())
-    console.log(doc.id, " => ", doc.data())
-})
+
 
 const monsters = ["Slime", "Skeleton", "Shroomer"];
 
 const App = () => {
-	const randomMonster = monsters[Math.floor(Math.random() * 3)];
     const [playerName, setPlayerName] = useState("")
 	const [playerStats, setPlayerStats] = useState(HeroFactory(""));
+	const randomMonster = monsters[Math.floor(Math.random() * 3)];
 	const [monsterStats, setMonsterStats] = useState(
 		MonsterFactory(randomMonster)
 	);
@@ -47,6 +42,21 @@ const App = () => {
 	const [stunned, setStunned] = useState(false);
 	const [score, setScore] = useState(0);
 	const [gameOver, setGameOver] = useState(false);
+    const [leaderboard, setLeaderboard] = useState([])
+
+    // fetch leaderboard
+    useEffect(() => {
+        const fetchData = async () => {
+            const querySnapshot = await getDocs(leaders);
+            const data = [];
+            querySnapshot.forEach((doc) => {
+                data.push(doc.data())
+                console.log(doc.id, " => ", doc.data())
+            })
+            setLeaderboard(data);
+        }
+        fetchData()
+    }, [gameOver])
 
 	// monster turn
 	useEffect(() => {

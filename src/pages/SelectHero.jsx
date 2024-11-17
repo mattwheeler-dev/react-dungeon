@@ -61,7 +61,6 @@ const SelectHero = () => {
 					<p>Health: {hero.health}</p>
 					<p>Armor: {hero.armor}</p>
 					<p>Attack: {hero.attack}</p>
-					<p>Skills: {`${hero.skills[0]}, ${hero.skills[1]}`}</p>
 				</div>
 			</article>
 		);

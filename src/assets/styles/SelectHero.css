@@ -13,10 +13,10 @@
 	padding: 1rem;
 	text-align: center;
 	background-color: var(--blue);
-	border-radius: var(--radius);
+    border: 1px solid #a9a9a960;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-around;
 	transition: var(--transition);
 }
 
@@ -46,7 +46,6 @@
 
 .hero-text p {
 	margin: 0.25rem 0;
-    /* font-size: 0.9rem; */
 }
 
 

@@ -2,16 +2,18 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 /* cards */
 .card {
 	height: 20rem;
-	width: 45%;
+	width: 47%;
+    max-width: 450px;
+    text-align: center;
 	padding: 1rem 0;
 	background-color: var(--blue);
-	border-radius: var(--radius);
+    border: 1px solid #a9a9a960;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -25,20 +27,24 @@
 .health {
 	width: 90%;
 	text-align: center;
+    padding: 0.2rem;
 	border: 1px solid #fff;
+    border-radius: var(--radius);
 }
 
 /* skill btns */
 .skill-btns {
 	width: 100%;
 	margin: 1rem auto;
-	text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skill-btns button {
 	cursor: pointer;
-	height: 7rem;
-	width: 7rem;
+	height: 6rem;
+	width: 6rem;
 	margin: 0 1rem;
 	font-size: 1rem;
 	color: #fff;

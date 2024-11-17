@@ -32,7 +32,7 @@ body {
 
 section {
     max-width: 1100px;
-    margin-top: 1rem;
+    margin: 1rem auto;
 }
 
 /* global headings */
@@ -79,6 +79,13 @@ button:hover {
 		margin: 2rem auto;
 	}
 
+    .guide, .hoh {
+        max-width: 900px;
+        top: 10%;
+        left: 0;
+        right: 0;
+    }
+
 	.select-hero-container {
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -91,8 +98,26 @@ button:hover {
 		flex-direction: column;
 	}
 
+    .battlefield {
+        justify-content: space-around;
+    }
+
+    .card {
+        height: 25rem;
+    }
+
+    .skill-btns button {
+        height: 8rem;
+        width: 8rem;
+        margin: 1rem 2rem;
+    }
+
 	.stun-icon {
 		height: 4rem;
 		width: 4rem;
 	}
+
+    .combat-log {
+        height: 15rem;
+    }
 }
