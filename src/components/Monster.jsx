@@ -19,8 +19,8 @@ const Monster = () => {
 				style={{
 					background: `linear-gradient(
 		90deg,
-		#cc0000 0%,
-		#cc0000 ${(monsterStats.health / maxHealth) * 100}%,
+		#bd0000 0%,
+		#bd0000 ${(monsterStats.health / maxHealth) * 100}%,
 		#000 ${(monsterStats.health / maxHealth) * 100 + 1}%
 	)`,
 				}}

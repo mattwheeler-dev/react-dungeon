@@ -8,6 +8,7 @@ import SelectHero from "./pages/SelectHero";
 import Battlefield from "./pages/Battlefield";
 import GameOver from "./pages/GameOver";
 import Guide from "./pages/Guide";
+import Leaderboard from "./pages/Leaderboard";
 
 export const AppContext = createContext("");
 
@@ -97,7 +98,7 @@ const App = () => {
 		if (playerStats.health < 1) {
             setLog([
                 ...log,
-                `${playerName} the ${playerStats.title} has been defeated... `,
+                `Oh no! ${playerName} the ${playerStats.title} has been defeated... `,
             ]);
 			setGameOver(true);
             setMonsterStats(MonsterFactory(randomMonster));
@@ -152,6 +153,8 @@ const App = () => {
                 }
 
                 {gameOver && <GameOver />}
+
+                <Leaderboard />
 			</AppContext.Provider>
 		</>
 	);

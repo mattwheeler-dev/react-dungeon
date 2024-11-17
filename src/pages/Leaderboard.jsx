@@ -32,7 +32,7 @@ const Leaderboard = () => {
 			<div className={`hoh ${isOpen && "open"}`}>
                 <button className="hoh-close" onClick={toggleHoh}>X</button>
 				<h3>Hall of Heroes</h3>
-                <p>Our mightiest heroes... thus far...</p>
+                <p>Our 10 mightiest heroes</p>
                 <table>
                     <tr>
                         <th>Rank</th>

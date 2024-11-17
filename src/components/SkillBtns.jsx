@@ -35,12 +35,12 @@ const SkillBtns = () => {
 		} else {
 			setMonsterStats({
 				...monsterStats,
-				health: monsterStats.health - (3 - monsterStats.armor),
+				health: monsterStats.health - (Math.ceil(playerStats.attack / 2) - monsterStats.armor),
 			});
 			setLog([
 				...log,
 				`${playerName} used ${playerStats.skills[1]}, dealing ${
-					3 - monsterStats.armor
+					Math.ceil(playerStats.attack / 2) - monsterStats.armor
 				} damage and stunning ${monsterStats.title} for 1 turn.`,
 			]);
 			setStunned(true);

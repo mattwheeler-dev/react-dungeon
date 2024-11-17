@@ -24,8 +24,8 @@ const Player = () => {
                         style={{
                             background: `linear-gradient(
                             90deg,
-                            #cc0000 0%,
-                            #cc0000 ${(playerStats.health / maxHealth) * 100}%,
+                            #bd0000 0%,
+                            #bd0000 ${(playerStats.health / maxHealth) * 100}%,
                             #000 ${(playerStats.health / maxHealth) * 100 + 1}%)`,
                         }}
                     >

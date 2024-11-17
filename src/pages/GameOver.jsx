@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
 import CombatLog from "../components/CombatLog";
-import Leaderboard from "./Leaderboard";
 import "../assets/styles/gameOver.css";
 
 const GameOver = () => {
@@ -32,7 +31,6 @@ const GameOver = () => {
 			<button className="new-game" onClick={startNewGame}>
 				New Game
 			</button>
-            <Leaderboard />
             <CombatLog />
 		</section>
 	);

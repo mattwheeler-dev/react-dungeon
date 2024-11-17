@@ -1,28 +1,42 @@
-.hoh-btn {
-    margin: 2rem 0;
-	padding: 0.5rem 1rem;
-	color: #fff;
-	background-color: transparent;
-	border-radius: var(--radius);
+.guide-btn, .hoh-btn {
+    color: #fff;
+    background-color: transparent;
+    border-radius: var(--radius);
 }
 
-.hoh {
+.guide-btn {
+	padding: 0.2rem 0.4rem;
+	font-weight: 300;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+}
+
+.hoh-btn {
+    margin: 1rem auto;
+	padding: 0.5rem 1rem;
+}
+
+.guide, .hoh {
 	display: none;
 	width: 80%;
+    max-width: 900px;
 	margin: 0 auto;
-	padding: 2rem 0;
+	padding: 2rem 1rem;
 	background-color: var(--midnight);
 	border: var(--border);
 	position: absolute;
-	left: 10%;
+    left: 0;
+    right: 0;
 	z-index: 99;
 }
 
-.hoh.open {
+
+.guide.open, .hoh.open {
 	display: block;
 }
 
-.hoh-close {
+.guide-close, .hoh-close {
     height: 2rem;
     width: 2rem;
     color: #fff;
@@ -33,62 +47,32 @@
     right: 1rem;
 }
 
-.hoh h3, .hoh p {
-	text-align: center;
-    margin-bottom: 1rem;
-}
-
-.hoh table {
-    width: 90%;
-    margin: 0 auto;
-    border-collapse: collapse;
-}
-
-
-th,td  {
-    text-align: center;
-    padding: 0.5rem 0 0.25rem 0;
-    border-bottom: 1px solid var(--orange);
-}
-
-.guide-btn {
-	padding: 0.2rem 0.4rem;
-	font-weight: 300;
-	color: #fff;
-	background-color: transparent;
-	border-radius: var(--radius);
-	position: absolute;
-	top: 0.5rem;
-	right: 0.5rem;
-}
-
-.guide {
-	display: none;
-	width: 80%;
-	margin: 0 auto;
-	padding: 1rem;
-	background-color: var(--midnight);
-	border: var(--border);
-	position: absolute;
-	left: 10%;
-	z-index: 99;
-}
-
-.guide.open {
-	display: block;
-}
-
 .guide h3,
-.guide h4 {
+.guide h4, .hoh h3, .hoh p, th,td   {
 	text-align: center;
 }
 
-.guide p,
-.guide ul {
+.guide p, .hoh p,
+.guide ul, .hoh table {
 	width: 90%;
 	margin: 0 auto 1rem auto;
 }
 
 .guide ul li {
-	margin-top: 0.1rem;
+    list-style-type: square;
+	margin-top: 0.2rem;
 }
+
+.hoh table {
+    border-collapse: collapse;
+}
+
+th,td  {
+    padding: 0.5rem 0 0.25rem 0;
+    border-bottom: 1px solid var(--orange);
+}
+
+
+
+
+

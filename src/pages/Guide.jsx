@@ -14,12 +14,12 @@ const Guide = () => {
 				Guide
 			</button>
 			<div className={`guide ${isOpen && "open"}`}>
-            <button className="guide-btn" onClick={toggleGuide}>
+            <button className="guide-close" onClick={toggleGuide}>
 				X
 			</button>
 				<h3>Guide</h3>
 				<p>
-					Greetings! Your quest is to defeat as many monsters as you can before
+					Greetings Adventurer! Your quest is to defeat as many monsters as you can before
 					your hero perishes!
 				</p>
 				<h4>How it works:</h4>
@@ -27,7 +27,7 @@ const Guide = () => {
 					<li>Choose your class and name your hero, then start the game</li>
 					<li>
 						Each hero has a basic attack skill which will deal damage based on
-						their attack, and a unique secondary skill that will deal 3 damage
+						their attack, and a unique secondary skill that will deal half of their attack damage
 						and stun the current monster for 1 turn
 					</li>
 					<li>
