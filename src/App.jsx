@@ -52,7 +52,6 @@ const App = () => {
             const data = [];
             querySnapshot.forEach((doc) => {
                 data.push(doc.data())
-                console.log(doc.id, " => ", doc.data())
             })
             setLeaderboard(data);
         }

@@ -10,7 +10,7 @@ const NameInput = () => {
 
 return <div className="name-input">
     <label htmlFor="name">Name Your Hero</label>
-    <input type="text" id="name" placeholder="Newbie" onChange={handleInput}/> </div>
+    <input type="text" id="name" placeholder="Newbie" autoComplete="off" onChange={handleInput}/> </div>
 }
 
 export default NameInput

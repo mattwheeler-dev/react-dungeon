@@ -34,12 +34,14 @@ const Leaderboard = () => {
 				<h3>Hall of Heroes</h3>
                 <p>Our 10 mightiest heroes</p>
                 <table>
+                    <thead>
                     <tr>
                         <th>Rank</th>
                         <th>Hero</th>
                         <th>Class</th>
                         <th>Score</th>
                     </tr>
+                    </thead>
                     <tbody>
                     {heroes}
                     </tbody>
