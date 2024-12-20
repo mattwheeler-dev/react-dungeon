@@ -1,6 +1,14 @@
 import { useState, useEffect, createContext } from "react";
 import { initializeApp } from "firebase/app";
-import { getFirestore,  collection, addDoc, getDocs, query, orderBy, limit } from "firebase/firestore";
+import {
+	getFirestore,
+	collection,
+	addDoc,
+	getDocs,
+	query,
+	orderBy,
+	limit,
+} from "firebase/firestore";
 import HeroFactory from "./components/HeroFactory";
 import MonsterFactory from "./components/MonsterFactory";
 import Scoreboard from "./components/Scoreboard";
@@ -13,25 +21,24 @@ import Leaderboard from "./pages/Leaderboard";
 export const AppContext = createContext("");
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA0l14UCW0YvqCoeL8l2BCawmlEROUwx_g",
-    authDomain: "react-dungeon-616f2.firebaseapp.com",
-    projectId: "react-dungeon-616f2",
-    storageBucket: "react-dungeon-616f2.firebasestorage.app",
-    messagingSenderId: "866416045499",
-    appId: "1:866416045499:web:7f19836ad2664b8f87a89e",
-    measurementId: "G-5YQH28P9J9"
-  };
+	apiKey: "AIzaSyA0l14UCW0YvqCoeL8l2BCawmlEROUwx_g",
+	authDomain: "react-dungeon-616f2.firebaseapp.com",
+	projectId: "react-dungeon-616f2",
+	storageBucket: "react-dungeon-616f2.firebasestorage.app",
+	messagingSenderId: "866416045499",
+	appId: "1:866416045499:web:7f19836ad2664b8f87a89e",
+	measurementId: "G-5YQH28P9J9",
+};
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const scoresRef = collection(db, "scores");
-const leaders = query(scoresRef, orderBy("Score", "desc"), limit(10))
-
+const leaders = query(scoresRef, orderBy("Score", "desc"), limit(10));
 
 const monsters = ["Slime", "Skeleton", "Shroomer"];
 
 const App = () => {
-    const [playerName, setPlayerName] = useState("")
+	const [playerName, setPlayerName] = useState("");
 	const [playerStats, setPlayerStats] = useState(HeroFactory(""));
 	const randomMonster = monsters[Math.floor(Math.random() * 3)];
 	const [monsterStats, setMonsterStats] = useState(
@@ -43,20 +50,20 @@ const App = () => {
 	const [stunned, setStunned] = useState(false);
 	const [score, setScore] = useState(0);
 	const [gameOver, setGameOver] = useState(false);
-    const [leaderboard, setLeaderboard] = useState([])
+	const [leaderboard, setLeaderboard] = useState([]);
 
-    // fetch leaderboard
-    useEffect(() => {
-        const fetchData = async () => {
-            const querySnapshot = await getDocs(leaders);
-            const data = [];
-            querySnapshot.forEach((doc) => {
-                data.push(doc.data())
-            })
-            setLeaderboard(data);
-        }
-        fetchData()
-    }, [gameOver])
+	// fetch leaderboard
+	useEffect(() => {
+		const fetchData = async () => {
+			const querySnapshot = await getDocs(leaders);
+			const data = [];
+			querySnapshot.forEach((doc) => {
+				data.push(doc.data());
+			});
+			setLeaderboard(data);
+		};
+		fetchData();
+	}, [gameOver]);
 
 	// monster turn
 	useEffect(() => {
@@ -95,34 +102,37 @@ const App = () => {
 		}, 1500);
 
 		if (playerStats.health < 1) {
-            setLog([
-                ...log,
-                `Oh no! ${playerName} the ${playerStats.title} has been defeated... `,
-            ]);
+			setLog([
+				...log,
+				`Oh no! ${playerName} the ${playerStats.title} has been defeated... `,
+			]);
 			setGameOver(true);
-            setMonsterStats(MonsterFactory(randomMonster));
-            try {
-                const docRef = addDoc(collection(db, "scores"), {
-                    "Hero Name": `${playerName}`,
-                    "Class": `${playerStats.title}`,
-                    "Score": `${score}`
-                })
-                console.log(`Document written with ID: ${docRef.id}`)
-            } catch (e) {
-                console.error(`Error adding ${playerName}'s score to leaderboard...`, e)
-            }
+			setMonsterStats(MonsterFactory(randomMonster));
+			try {
+				const docRef = addDoc(collection(db, "scores"), {
+					"Hero Name": `${playerName}`,
+					Class: `${playerStats.title}`,
+					Score: `${score}`,
+				});
+				console.log(`Document written with ID: ${docRef.id}`);
+			} catch (e) {
+				console.error(
+					`Error adding ${playerName}'s score to leaderboard...`,
+					e
+				);
+			}
 		}
 	}, [playerTurn]);
 
 	return (
 		<>
-			<h1>MW-Dev{`'`}s Dungeon</h1>
+			{!gameStatus && <h1>MW-Dev{`'`}s Dungeon</h1>}
 			<Guide />
 
 			<AppContext.Provider
 				value={{
-                    playerName,
-                    setPlayerName,
+					playerName,
+					setPlayerName,
 					playerStats,
 					setPlayerStats,
 					monsterStats,
@@ -139,21 +149,21 @@ const App = () => {
 					setScore,
 					gameOver,
 					setGameOver,
-                    leaderboard
+					leaderboard,
 				}}
 			>
-                {!gameStatus && !gameOver && <SelectHero />}
+				{!gameStatus && !gameOver && <SelectHero />}
 
-                {gameStatus && !gameOver &&
-                    <>
-                        <Scoreboard />
-                        <Battlefield />
-                    </>
-                }
+				{gameStatus && !gameOver && (
+					<>
+						<Scoreboard />
+						<Battlefield />
+					</>
+				)}
 
-                {gameOver && <GameOver />}
+				{gameOver && <GameOver />}
 
-                <Leaderboard />
+				<Leaderboard />
 			</AppContext.Provider>
 		</>
 	);
