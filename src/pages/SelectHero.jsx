@@ -6,7 +6,7 @@ import "../assets/styles/SelectHero.css";
 
 const SelectHero = () => {
 	const {
-        playerName,
+		playerName,
 		playerStats,
 		setPlayerStats,
 		monsterStats,
@@ -70,14 +70,15 @@ const SelectHero = () => {
 		<section className="select-hero-container">
 			<h2>Select Your Class</h2>
 			{heroCards}
-            <NameInput />
+			<NameInput />
 			<button
 				className="start-btn"
 				onClick={startGame}
 				disabled={
-					playerStats.title != "Knight" &&
-					playerStats.title != "Rogue" &&
-					playerStats.title != "Mage" || !playerName
+					(playerStats.title != "Knight" &&
+						playerStats.title != "Rogue" &&
+						playerStats.title != "Mage") ||
+					!playerName
 				}
 			>
 				Start Game!
