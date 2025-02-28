@@ -1,5 +1,7 @@
 # React Dungeon
 
+<img width="500" src="https://github.com/user-attachments/assets/2602ecc7-9f58-49d6-b28e-b684ac314361" alt="thumbnail for react-dungeon project" />
+
 - Built with Reactjs and Vite
 - Hosted using Firebase
 - Small database for leaderboard using Cloud Firestore
